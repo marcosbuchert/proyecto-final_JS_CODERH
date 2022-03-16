@@ -8,8 +8,9 @@ function cargar_notas(){
     nota = document.getElementById("nota").value
 
     notas.push(new alumno(nombre, apellido, materia, nota))
-
-    alert("Se ha subido correctamente la nota a " + nombre + " " + apellido)
+    swal({
+        title: "Se ha subido correctamente la nota a " + nombre + " " + apellido
+    })
 }
 
 function alumno(nombre, apellido, materia, nota){
@@ -26,7 +27,9 @@ function nota_mayor(){
         if (max < nota.nota)
             max = nota.nota;
     }
-    alert("La nota mas alta es un " + max)
+    swal({
+        title: "La nota mas alta es un " + max
+    })
 }
 
 function calc_prom_grl(){
@@ -36,8 +39,12 @@ function calc_prom_grl(){
     prom = prom/cont
 
     if (prom != 0){
-        alert("El promedio general de las notas de los alumnos es: " + prom)
+        swal({
+            title: "El promedio general de las notas de los alumnos es: " + prom
+        })
     } else{
-        alert("No hay notas cargadas")
+        swal({
+            title: "No hay notas cargadas"
+        })
     }
 }
